@@ -94,7 +94,7 @@ mod query_indexer {
                 headers
             );
             debug_println!("status code {}", resp.status_code);
-            //debug_println!("body {}", std::str::from_utf8(&resp.body).unwrap());
+            debug_println!("body {}", std::str::from_utf8(&resp.body).unwrap());
 
             if resp.status_code != 200 {
                 return Err(Error::HttpRequestFailed);
@@ -124,7 +124,7 @@ mod query_indexer {
             let url = "https://api.subquery.network/sq/GuiGou12358/lucky-shibuya-v0_1_0/";
 
             let query_indexer = QueryIndexer::new(url.to_string());
-            let era = 2781;
+            let era = 2800;
             let res = query_indexer.get_developer_rewards(era);
 
             assert!(res.is_ok());
